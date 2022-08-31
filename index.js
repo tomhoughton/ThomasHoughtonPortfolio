@@ -25,6 +25,19 @@ app.get('/', (req, res) => {
     res.send('Hello World');
 });
 
+// Get projects route:
+app.get('/api/get-project', (req, res) => {
+    var projects = Project.find({}, (err, found) => {
+        if (!err) {
+            let data = { data: found };
+            console.log(data);
+            res.json({ data: found });
+        } else if (err) {
+            res.send(err);
+        }
+    });
+});
+
 // Add a project route: 
 app.post('/api/add-project', (req, res) => {
     const input = req.body; // Get the input of the request.
