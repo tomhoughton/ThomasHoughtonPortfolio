@@ -9,10 +9,9 @@ const articleSchema = mongoose.Schema({
         type: String,
         required: [true, 'Please add a medium article link']
     },
-    isProjectArticle: {
-        type: Boolean,
-        required: [true, 'Please state if an article is part of a project']
-    },
+    project: {
+        type: mongoose.Types.ObjectId
+    }
     
 }, {
     timestamps: true

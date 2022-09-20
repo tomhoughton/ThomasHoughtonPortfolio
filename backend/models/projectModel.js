@@ -9,9 +9,6 @@ const projectSchema = mongoose.Schema({
         type: String,
         required: [true, 'Please add a link']
     },
-    articles: {
-        type: [mongoose.Schema.Types.ObjectId],
-    },
     logo: {
         type: String,
         required: [true, 'Please add a logo file name']
@@ -24,3 +21,5 @@ const projectSchema = mongoose.Schema({
         required: [true, 'Please add a description']
     }
 });
+
+module.exports = mongoose.model('Project', projectSchema);
