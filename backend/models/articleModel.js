@@ -12,5 +12,10 @@ const articleSchema = mongoose.Schema({
     isProjectArticle: {
         type: Boolean,
         required: [true, 'Please state if an article is part of a project']
-    }
+    },
+    
+}, {
+    timestamps: true
 });
+
+module.exports = mongoose.model('Article', articleSchema);

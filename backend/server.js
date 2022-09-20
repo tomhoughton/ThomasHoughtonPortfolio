@@ -17,6 +17,7 @@ app.use(express.urlencoded({extended: false})); // Enable encoded URL.
 
 // Routing:
 app.use('/api/projects', require('./routes/projectsRoutes'))
+app.use('/api/articles', require('./routes/articlesRoutes'));
 
 // Start the server:
 app.listen(port, () => console.log(`Server listening on port: ${port}`));
