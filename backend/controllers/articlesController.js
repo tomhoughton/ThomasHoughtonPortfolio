@@ -11,17 +11,13 @@ const getArticles = asyncHandler( async (req, res) => {
     // Get all of the articles:
     const articles = await Article.find();
 
-    // TODO: This might just be changed to retreive only the articles not 
-    // Part of a project
-    
-
     res.status(200).json({articles});
 });
 
 const postArticle = asyncHandler( async (req, res) => {
 
     // Check if the request body has what we need:
-    if (!req.body.title  || !req.body.mediumLink || !req.body.project) {
+    if (!req.body.title  || !req.body.mediumLink || !req.body.project || !req.body.tlDr) {
         res.status(400); 
         throw new Error('Please add the necesarry fields');
     } 
@@ -29,7 +25,8 @@ const postArticle = asyncHandler( async (req, res) => {
     const article = await Article.create({
         title: req.body.title,
         mediumLink: req.body.mediumLink,
-        project: req.body.project
+        project: req.body.project,
+        tlDr: req.body.tlDr
     });
 
     console.log(req.body);

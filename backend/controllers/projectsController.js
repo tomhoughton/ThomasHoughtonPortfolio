@@ -25,7 +25,7 @@ const getProjects = asyncHandler( async (req, res) => {
     // Now we need to sort all of the articles,
     // And create the json response:
     let projectsReturn = []; // Create an array to store the new objects:
-    projects.forEach((x) => { // Loop through:
+    projects.forEach((x, i) => { // Loop through:
         let y = JSON.parse(JSON.stringify(x)); // Convert from mongoose to js object
         y.articles = []; // Create empty articles array.
         let id = y._id; // Get the ID of the current project.
@@ -37,7 +37,7 @@ const getProjects = asyncHandler( async (req, res) => {
         });
         
         projectsReturn.push(y); // Add the edited project object.
-    });
+    }); 
 
     // Send the response:
     res.status(200).json({ projectsReturn });
@@ -45,6 +45,7 @@ const getProjects = asyncHandler( async (req, res) => {
 
 // @desc Post Projects
 // @route GET /api/projects
+// PRIVATE !!!!
 const postProject = asyncHandler( async (req, res) => {
 
     // Check to see if the request has what we need:

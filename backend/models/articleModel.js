@@ -11,8 +11,11 @@ const articleSchema = mongoose.Schema({
     },
     project: {
         type: mongoose.Types.ObjectId
+    },
+    tlDr: {
+        type: String,
+        required: [true, 'Please add a TL:DR']
     }
-    
 }, {
     timestamps: true
 });
