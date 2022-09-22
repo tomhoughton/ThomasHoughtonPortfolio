@@ -48,9 +48,9 @@ function App() {
 					})
 				}
 			</Swiper>
-			
-			<p>Index: {selectedProjectIndex}</p>
 			<ProjectDetails title={selectedProjectIndex} project={projects[selectedProjectIndex]} />
+				
+		
 		</ChakraProvider>
 	);
 }

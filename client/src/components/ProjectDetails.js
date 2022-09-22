@@ -1,9 +1,21 @@
 const ProjectDetails = (props) => {
+    
+    // Try Catch to make sure it doesn't crash on load.
+    let tryProjectName = () => {
+        try {
+            console.log('Try');
+            return props.project.name
+        } catch (error) {
+            return 'Loading'
+        }
+    }
+
+    var name = tryProjectName();
+
     return (
         <div>
             <h1>{props.title}</h1>
-            <p>Hello</p>
-            <h1>{props.project.name}</h1>
+            <h1>{name}</h1>
         </div>
     )
 }

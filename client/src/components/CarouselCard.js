@@ -7,7 +7,7 @@ const CarouselCard = (props) => {
         console.log(`Click: ${props.index}`);
         props.onChange(props.index);
     }
-
+    
     return (
         <Box onClick={click}>
             <VStack>
