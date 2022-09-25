@@ -1,4 +1,4 @@
-import { Heading, Box, VStack, Text } from '@chakra-ui/react'
+import { Heading, Box, VStack, Text, Center } from '@chakra-ui/react'
 import {   ReactComponent as SVG} from './gitHub.svg' 
 
 const CarouselCard = (props) => {
@@ -28,12 +28,14 @@ const CarouselCard = (props) => {
     let logoColour = getLogoColour();
 
     return (
-        <Box style={{backgroundColor: backgroundColour}} onClick={click}>
-            <VStack>
-                <Heading>{props.title}</Heading>
-                <SVG fill={logoColour} style={{ width: '70%', height: '70%'}}/>
-            </VStack>
-        </Box>
+        <Center>
+            <Box className='CarouselCard' style={{backgroundColor: backgroundColour}} onClick={click}>
+                <VStack>
+                    <Heading className='CarouselHeading'>{props.title}</Heading>
+                    <SVG className='CarouselLogo' fill={logoColour} style={{ width: '70%', height: '70%'}}/>
+                </VStack>
+            </Box>
+        </Center>
     )
 }
 

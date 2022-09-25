@@ -2,7 +2,11 @@ import React, { useEffect, useState, setState } from 'react';
 import { Navigation, Pagination } from 'swiper';  
 import { Swiper, SwiperSlide } from 'swiper/react';
 import CarouselCard from './components/CarouselCard';
-import { ChakraProvider, Container } from '@chakra-ui/react';
+import { ChakraProvider, Container, Grid, GridItem } from '@chakra-ui/react';
+import { ReactComponent as Tile } from './drawing.svg';
+import { Row, Col } from 'react-grid-system';
+import anime from 'animejs/lib/anime.es';
+import Welcome from './components/Welcome';
 
 // Styles:
 import 'swiper/css';
@@ -32,33 +36,37 @@ function App() {
 		
 	}
 
+	anime({
+		targets: '.drawing',
+		strokeDashoffset: [anime.setDashoffset, 0],
+		easing: 'cubicBezier(.5, .05, .1, .3)',
+		duration: 1000,
+		delay: function(el, i) { return i * 250 },    
+	});
+
 	return (
 		<ChakraProvider>
-		
-			{ console.log(`SelectedProject: ${selectedProjectIndex}`) }
-				<Swiper
-					modules={[Navigation, Pagination]}
-					spaceBetween={50}
-					slidesPerView={3}
-					navigation={{clickable: true}}
-					pagination={{clickable: true}}
-					scrollbar={{draggable: true}}
-					onSlideChange={() => console.log('slide change')}
-					onSwiper={(swiper) => console.log(swiper)}
-				>	
-					{
-						projects.map((x, i) => {
-							return (
-								<SwiperSlide>
-									<CarouselCard index={i} selectedProject={selectedProjectIndex} title={x.name} onChange={carouselClick}/>
-								</SwiperSlide>
-							)
-						})
-					}
-				</Swiper>
-				<ProjectDetails title={selectedProjectIndex} project={projects[selectedProjectIndex]} />
+			<Welcome />     
+		 
+			<Swiper
+				modules={[Navigation, Pagination]}
+				spaceBetween={50}
+				slidesPerView={3}
+				onSlideChange={() => console.log('slide change')}
+				onSwiper={(swiper) => console.log(swiper)}
+			>	
+				{
+					projects.map((x, i) => {
+						return (
+							<SwiperSlide>
+								<CarouselCard index={i} selectedProject={selectedProjectIndex} title={x.name} onChange={carouselClick}/>
+							</SwiperSlide>
+						)
+					})
+				}
+			</Swiper>
 			
-		
+			<ProjectDetails title={selectedProjectIndex} project={projects[selectedProjectIndex]} />
 		</ChakraProvider>
 	);
 }
