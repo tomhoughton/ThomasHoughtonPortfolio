@@ -6,8 +6,7 @@ const { protect } = require('../middleware/authMiddleware');
 
 /*
 So we are baso gonna have a get request for all projects,
-We will create a post request for projects but may remove later, depends on whether 
-authentication and all that will work.
+We will create a post request for projects, either for a seceret URL route or GTK4 Client.
 */
 
 router.route('/').get(getProjects).post(protect, postProject);

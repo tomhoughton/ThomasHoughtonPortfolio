@@ -9,7 +9,6 @@ const Article = require('../models/articleModel');
 // @route GET /api/projects
 const getProjects = asyncHandler( async (req, res) => {
 
-    console.log('Before Projects');
     // Get the projects:
     let projects = await Project.find();
     
@@ -18,7 +17,7 @@ const getProjects = asyncHandler( async (req, res) => {
     projects.forEach((x) => {
         projectIds.push(x._id); 
     });
-
+    
     // Find all relavant Articles:
     let articles = await Article.find({project: { $in: projectIds}});
     
