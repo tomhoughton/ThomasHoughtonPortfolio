@@ -1,43 +1,38 @@
-html {
-  background-color: #16161a;
+.App {
+  text-align: center;
 }
 
-
-/* CONTROL */
-
-.tomControl {
-  position: fixed;
-  z-index: 2;
-  right: 0;
-  color: white;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 150px;
-  margin-right: 0px;
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
 }
 
-.controlUL {
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
   display: flex;
-  list-style: none;
-}
-
-.controlLI {
-  display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 90px;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
-.ControlLabel {
-  width: 70px;
+.App-link {
+  color: #61dafb;
 }
 
-.ControlCircle {
-  width: 15px;
-  height: 15px;
-  border-radius: 33px;
-
-  transition-property: background-color;
-  transition-duration: 0.5s;
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

@@ -1,15 +1,18 @@
-// Imports:
+import logo from './logo.svg';
 import './App.css';
-import { Routes, Route } from 'react-router-dom';
-import Home from './components/Home';
+import { FullPage, Slide } from 'react-full-page'; 
 
 function App() {
   return (
-    <Routes>
-      <Route path='/' element={< Home />} />
-    </Routes>
+    <FullPage>
+      <Slide className="bg-slate-500">
+        <h1>Slide01</h1>
+      </Slide>
+      <Slide className="bg-green-200">
+        <h1>Slide02</h1>
+      </Slide>
+    </FullPage>
   );
 }
 
 export default App;
- 
