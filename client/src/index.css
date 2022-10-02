@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components; 
 @tailwind utilities;
+
+@layer components {
+    .page-label {
+        @apply transition-all duration-500;
+    }
+
+    .page-dot {
+        @apply transition-all duration-500;
+    }
+}

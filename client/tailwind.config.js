@@ -5,8 +5,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        tertiary: '#ff0000',
-        tertiaryNotActive: '#00ff00'
+        tertiary: '#2cb67d',
+        tertiaryNotActive: '#185a3f',
+        background: '#000000',
+        backgroundAlt: '#242629',
+        button: '#7f5af0'
       }
     },
   },
