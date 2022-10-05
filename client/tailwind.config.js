@@ -10,6 +10,9 @@ module.exports = {
         background: '#000000',
         backgroundAlt: '#242629',
         button: '#7f5af0'
+      },
+      boxShadow: {
+        'lg': '0 -10px 0px 0px rgba(122, 90, 240, 1)'
       }
     },
   },

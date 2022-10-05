@@ -10,4 +10,8 @@
     .page-dot {
         @apply transition-all duration-500;
     }
+
+    .decoration {
+        @apply rounded-full shadow-lg
+    }
 }
