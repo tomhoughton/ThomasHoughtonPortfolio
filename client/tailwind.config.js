@@ -12,7 +12,8 @@ module.exports = {
         button: '#7f5af0'
       },
       boxShadow: {
-        'lg': '0 -10px 0px 0px rgba(122, 90, 240, 1)'
+        'lg': '0 -10px 0px 0px rgba(122, 90, 240, 1)',
+        'md': '10px 10px 0px 0px rgba(44, 182, 125, 1)'
       }
     },
   },

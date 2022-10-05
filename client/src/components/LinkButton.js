@@ -6,14 +6,15 @@ const LinkButton = ({type, name, labelHidden}) => {
     
     const LinkIcon = () => {
         if (type === 'git') {
-            return <Git className='flex w-10 h-10 m-auto'/>
+            return <Git className='flex w-10 h-10 m-auto' fill='#ffffff'/>
         } else if (type === 'linkedin') {
-            return <LinkedIn className='flex w-10 h-10 m-auto'/>
+            return <LinkedIn className='flex w-10 h-10 m-auto' fill='#ffffff'/>
         } else if (type === 'medium') {
             return <Medium className='flex w-10 h-10 m-auto'/>
         }
         return (<h1>Hello</h1>)
     }
+    
     
     return (
         <a href='https://github.com/tomhoughton'>

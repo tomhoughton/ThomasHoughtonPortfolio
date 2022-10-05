@@ -14,4 +14,12 @@
     .decoration {
         @apply rounded-full shadow-lg
     }
+
+    .card {
+        @apply hover:shadow-md  transition-all duration-500
+    }
+
+    .button {
+        @apply hover:bg-tertiary transition-all duration-200
+    }
 }
