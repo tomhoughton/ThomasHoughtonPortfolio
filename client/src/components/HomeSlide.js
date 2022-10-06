@@ -9,7 +9,7 @@ const HomeSlide = () => {
     const { height, width } = useWindowDimensions();
     
     return (
-        <div className="h-screen flex flex-col ">
+        <div className="h-[100%] flex flex-col ">
             <Decoration />
             <Decoration />
             <div className="m-auto text-center">
