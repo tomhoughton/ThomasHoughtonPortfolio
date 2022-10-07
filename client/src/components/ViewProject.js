@@ -4,7 +4,7 @@ import Decoration from './Decoration';
 
 const ViewProject = () => {
     return (
-        <div className="flex flex-col space-y-20">
+        <div className="flex flex-col h-screen space-y-20 bg-backgroundAlt text-white">
             <Decoration />
             <div className='flex flex-row m-auto mt-20 mb-10 '>
                 <Git className='flex w-20 h-20 mt-auto mb-auto mr-5' fill='#2cb67d'/>

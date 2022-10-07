@@ -5,8 +5,9 @@ import PageControls from './components/PageControls';
 import HomeSlide from './components/HomeSlide';
 import ProjectsSlide from './components/ProjectsSlide';
 import ViewProject from './components/ViewProject';
+import {Routes, Route } from 'react-router-dom'
 
-function App() {
+function Main() {
   return (
     <FullPage controls={PageControls}>
       <Slide className="bg-background text-white">
@@ -18,10 +19,16 @@ function App() {
       <Slide className="bg-background text-white">
         <ProjectsSlide Title={'Work'} CardBackground={'bg-backgroundAlt'} dispView={false}/>
       </Slide>
-      <Slide className="bg-backgroundAlt text-white">
-        <ViewProject />
-      </Slide>
     </FullPage>
+  );
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path='/' element={<Main />} />
+      <Route path='/view' element={<ViewProject />} />
+    </Routes>
   );
 }
 
