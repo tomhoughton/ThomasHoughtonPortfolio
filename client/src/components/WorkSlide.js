@@ -6,11 +6,14 @@ const WorkSlide = () => {
         <div className="h-[100%] flex flex-col">
             <Decoration className="top-0"/>
             <div className="text-center h-5">
-                <h1 className="text-8xl md:text-5xl">Work</h1>
+                <h1 className="text-4xl md:text-5xl">Projects</h1>
             </div>
-            <div className="flex m-auto flex-col md:flex-row space-y-10 md:space-x-10 md:space-y-0">
+            <div className="flex m-auto flex-row md:flex-row  md:space-x-10 md:space-y-0">
                 <Card />
                 <Card />
+                <Card />
+            </div>
+            <div className="flex m-auto flex-row md:flex-row  md:space-x-10 md:space-y-0">
                 <Card />
                 <Card />
                 <Card />

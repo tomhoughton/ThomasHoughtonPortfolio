@@ -6,11 +6,11 @@ const LinkButton = ({type, name, labelHidden}) => {
     
     const LinkIcon = () => {
         if (type === 'git') {
-            return <Git className='flex w-10 h-10 m-auto' fill='#ffffff'/>
+            return <Git className='flex lg:w-10 lg:h-10 sm:w-7 sm:h-7  m-auto' fill='#ffffff'/>
         } else if (type === 'linkedin') {
-            return <LinkedIn className='flex w-10 h-10 m-auto' fill='#ffffff'/>
+            return <LinkedIn className='flex lg:w-10 lg:h-10 sm:w-7 sm:h-7 m-auto' fill='#ffffff'/>
         } else if (type === 'medium') {
-            return <Medium className='flex w-10 h-10 m-auto'/>
+            return <Medium className='flex lg:w-10 lg:h-10 sm:w-7 sm:h-7  m-auto'/>
         }
         return (<h1>Hello</h1>)
     }
@@ -18,14 +18,14 @@ const LinkButton = ({type, name, labelHidden}) => {
     
     return (
         <a href='https://github.com/tomhoughton'>
-            <div className='w-14 h-14 flex flex-col mr-3 ml-3'>
+            <div className='lg:w-14 lg:h-14 md:w-10 md:h-10 flex flex-col mr-4 ml-4 '>
                 <div className='flex m-auto bg-button p-2 rounded-full'>
                     {
                         LinkIcon()
                     }
                     
                 </div>
-                <p className='m-auto text-xs md:text-base text-center'>{name}</p>
+                <p className='m-auto text-xs md:text-sm md:text-base text-center'>{name}</p>
             </div>
         </a>
     )
