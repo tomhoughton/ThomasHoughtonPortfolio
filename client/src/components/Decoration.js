@@ -10,7 +10,7 @@ const Decoration = ({background}) => {
     }
 
     return (
-        <div className="v-screen">
+        <div className="">
             <div className="flex flex-row m-auto justify-center">
                 {decors}
             </div>

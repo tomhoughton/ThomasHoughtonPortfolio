@@ -4,6 +4,7 @@ import { FullPage, Slide } from 'react-full-page';
 import PageControls from './components/PageControls';
 import HomeSlide from './components/HomeSlide';
 import ProjectsSlide from './components/ProjectsSlide';
+import ViewProject from './components/ViewProject';
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
       </Slide>
       <Slide className="bg-background text-white">
         <ProjectsSlide Title={'Work'} CardBackground={'bg-backgroundAlt'} dispView={false}/>
+      </Slide>
+      <Slide className="bg-backgroundAlt text-white">
+        <ViewProject />
       </Slide>
     </FullPage>
   );

@@ -18,7 +18,7 @@ const LinkButton = ({type, name, labelHidden}) => {
     
     return (
         <a href='https://github.com/tomhoughton'>
-            <div className='lg:w-14 lg:h-14 md:w-10 md:h-10 flex flex-col mr-4 ml-4 '>
+            <div className='flex lg:w-14 lg:h-14 md:w-10 md:h-10 flex flex-col mr-4 ml-4 '>
                 <div className='flex m-auto bg-button p-2 rounded-full'>
                     {
                         LinkIcon()
