@@ -25,7 +25,7 @@ const LinkButton = ({type, name, labelHidden}) => {
                     }
                     
                 </div>
-                <p className='m-auto text-xs md:text-sm md:text-base text-center'>{name}</p>
+                <p className='m-auto text-xs md:text-sm text-center'>{name}</p>
             </div>
         </a>
     )
