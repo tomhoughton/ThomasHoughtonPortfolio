@@ -12,11 +12,11 @@ const ViewProject = () => {
             </div>
             <div className="flex flex-col md:flex-row mt-10 mb-0 items-start">
                 <div className="card container m-5 ml-[200px] bg-background rounded-xl p-4">
-                    <h1 className="text-xl">Description</h1>
+                    <h1 className="text-3xl m-4 text-center">Description</h1>
                     <p className="text-center">In aliquip ex ut ad minim reprehenderit eiusmod nostrud anim qui eiusmod fugiat consequat elit. Nostrud adipisicing cupidatat Lorem deserunt esse. Fugiat proident in pariatur est culpa nisi et in eu laboris excepteur officia cillum voluptate. Minim nostrud id ea nisi. Ea amet excepteur et ullamco officia laboris minim. Commodo amet qui elit reprehenderit id occaecat consequat mollit. Ipsum qui ipsum magna anim nostrud culpa sunt in.</p>
                 </div>      
                 <div className="card container m-5 mr-[200px] w-70 bg-background rounded-xl p-4">
-                    <h1>Hello 01</h1>
+                    <h1 className="text-3xl m-4 text-center">Articles</h1>
                     <Article />
                     <Article />
                     <Article />
