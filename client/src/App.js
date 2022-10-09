@@ -27,7 +27,7 @@ function App() {
   return (
     <Routes>
       <Route path='/' element={<Main />} />
-      <Route path='/view' element={<ViewProject />} />
+      <Route path='/view/:id' element={<ViewProject />} />
     </Routes>
   );
 }
