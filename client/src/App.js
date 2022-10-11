@@ -1,11 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 import { FullPage, Slide } from 'react-full-page'; 
+import {Routes, Route } from 'react-router-dom'
+
+// Components:
 import PageControls from './components/PageControls';
 import HomeSlide from './components/HomeSlide';
 import ProjectsSlide from './components/ProjectsSlide';
 import ViewProject from './components/ViewProject';
-import {Routes, Route } from 'react-router-dom'
+import Login from './components/Login';
 
 function Main() {
   return (
@@ -28,6 +31,7 @@ function App() {
     <Routes>
       <Route path='/' element={<Main />} />
       <Route path='/view/:id' element={<ViewProject />} />
+      <Route path='thomaslogin' element={<Login/>}/>
     </Routes>
   );
 }
