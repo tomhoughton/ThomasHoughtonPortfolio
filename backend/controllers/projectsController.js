@@ -45,15 +45,22 @@ const getProjects = asyncHandler( async (req, res) => {
 // @desc Get Project
 // @route GET /api/project
 const getProject = asyncHandler( async (req, res) => {
-    console.log(req.params);
-    console.log('GetProject')
-    // // Find a project:
+
+    // Find a project:
     let id = req.params.id;    
     const project = await Project.findById(id);
 
-    // console.log(project);
+    // Get the articles belonging to a project:
+    let articles = await Article.find({project: { $in: id}});
 
-    res.status(200).json({project})
+    console.log(articles);
+
+    var projectRtn = {
+        project: project, 
+        articles: articles
+    }
+
+    res.status(200).json({projectRtn})
 })
 
 // @desc Post Projects
