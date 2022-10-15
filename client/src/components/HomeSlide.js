@@ -1,13 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, setState } from "react";
 import LinkButton from "./LinkButton";
 import Decoration from "./Decoration";
 import useWindowDimensions from "../functions/UseWindowDimensions";
 
 // mt-[-50%] md:mt-[-320px]
 const HomeSlide = () => {
-
-    const { height, width } = useWindowDimensions();
-    
     return (
         <div className="h-screen flex flex-col ">
             <Decoration />

@@ -2,7 +2,7 @@ import {ReactComponent as Git } from '../Assets/git.svg';
 import {ReactComponent as LinkedIn} from '../Assets/linkedin.svg';
 import {ReactComponent as Medium} from '../Assets/medium.svg';
 
-const LinkButton = ({type, name, labelHidden}) => {
+const LinkButton = ({type, name, labelHidden, link}) => {
     
     const LinkIcon = () => {
         if (type === 'git') {
@@ -17,8 +17,8 @@ const LinkButton = ({type, name, labelHidden}) => {
     
     
     return (
-        <a href='https://github.com/tomhoughton'>
-            <div className='flex lg:w-14 lg:h-14 md:w-10 md:h-10 flex flex-col mr-4 ml-4 '>
+        <a href={link}>
+            <div className='flex lg:w-14 lg:h-14 md:w-10 md:h-10 flex-col mr-4 ml-4 '>
                 <div className='flex m-auto bg-button p-2 rounded-full'>
                     {
                         LinkIcon()
