@@ -42,6 +42,25 @@ const getProjects = asyncHandler( async (req, res) => {
     res.status(200).json({ projectsReturn });
 });
 
+// @desc Get Project
+// @route GET /api/project
+const getProject = asyncHandler( async (req, res) => {
+
+    // Check to see if the request features a body:
+    if (!req.body.projectId) {
+        res.status(400);
+        throw new Error('Please include the required fields');
+    }
+
+    // Find a project:
+    let id = req.body.projectId;    
+    const project = await Project.findById(id);
+
+    console.log(project);
+
+    res.status(200).json({project})
+})
+
 // @desc Post Projects
 // @route GET /api/projects
 // PRIVATE !!!!
@@ -69,5 +88,6 @@ const postProject = asyncHandler( async (req, res) => {
 
 module.exports = {
     getProjects,
+    getProject,
     postProject
 }

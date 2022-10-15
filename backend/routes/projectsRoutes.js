@@ -1,7 +1,7 @@
 // Imports:
 const express = require('express');
 const router = express.Router();
-const { getProjects, postProject } = require('../controllers/projectsController');
+const { getProjects, getProject, postProject } = require('../controllers/projectsController');
 const { protect } = require('../middleware/authMiddleware');
 
 /*
@@ -10,5 +10,6 @@ We will create a post request for projects, either for a seceret URL route or GT
 */
 
 router.route('/').get(getProjects).post(protect, postProject);
+router.route('/getProject').get(getProject);
 
 module.exports = router;
