@@ -10,6 +10,6 @@ We will create a post request for projects, either for a seceret URL route or GT
 */
 
 router.route('/').get(getProjects).post(protect, postProject);
-router.route('/getProject').get(getProject);
+router.route('/getProject/:id').get(getProject);
 
 module.exports = router;

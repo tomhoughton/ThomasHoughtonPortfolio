@@ -45,18 +45,13 @@ const getProjects = asyncHandler( async (req, res) => {
 // @desc Get Project
 // @route GET /api/project
 const getProject = asyncHandler( async (req, res) => {
-
-    // Check to see if the request features a body:
-    if (!req.body.projectId) {
-        res.status(400);
-        throw new Error('Please include the required fields');
-    }
-
-    // Find a project:
-    let id = req.body.projectId;    
+    console.log(req.params);
+    console.log('GetProject')
+    // // Find a project:
+    let id = req.params.id;    
     const project = await Project.findById(id);
 
-    console.log(project);
+    // console.log(project);
 
     res.status(200).json({project})
 })
