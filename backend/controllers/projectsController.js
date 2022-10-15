@@ -48,7 +48,7 @@ const getProjects = asyncHandler( async (req, res) => {
 const postProject = asyncHandler( async (req, res) => {
 
     // Check to see if the request has what we need:
-    if (!req.body.name || !req.body.gitHubLink || !req.body.logo || !req.body.description) {
+    if (!req.body.name || !req.body.projectLink || !req.body.logo || !req.body.description) {
         res.status(400);
         throw new Error('Please include the required fields');
     } 
@@ -56,7 +56,7 @@ const postProject = asyncHandler( async (req, res) => {
     // Create a new Project:
     const project = await Project.create({
         name: req.body.name,
-        gitHubLink: req.body.gitHubLink,
+        projectLink: req.body.projectLink,
         logo: req.body.logo,
         images: req.body.images,
         description: req.body.description

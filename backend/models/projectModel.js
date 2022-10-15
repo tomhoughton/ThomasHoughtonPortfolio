@@ -5,7 +5,7 @@ const projectSchema = mongoose.Schema({
         type: String,
         required: [true, 'Please add a project name']
     },
-    gitHubLink: {
+    projectLink: {
         type: String,
         required: [true, 'Please add a link']
     },
