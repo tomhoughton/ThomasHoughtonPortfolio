@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Loader from './loader';
+import LinkButton from './LinkButton';
 
 const ViewProject = (props) => {
 
@@ -17,6 +18,7 @@ const ViewProject = (props) => {
         fetch(`/api/projects/getProject/${id}`, {
         }).then(res => res.json()).then(data => {
             setData(data.projectRtn)
+            console.log(data.projectRtn);
             setTimeout(() => {
                 setSpinner(false)
             }, 1000)
@@ -38,7 +40,8 @@ const ViewProject = (props) => {
                     <div className="flex flex-col md:flex-row mt-10 mb-0 items-start">
                         <div className="card container m-5 ml-[200px] bg-background rounded-xl p-4">
                             <h1 className="text-3xl m-4 text-center">Description</h1>
-                            <p className="text-center">{data.project.description}</p>
+                            <p className="text-center m-5">{data.project.description}</p>
+                            <LinkButton className="m-5" type={'git'} link={data.project.projectLink}/>
                         </div>      
                         <div className="card container m-5 mr-[200px] w-70 bg-background rounded-xl p-4">
                             <h1 className="text-3xl m-4 text-center">Articles</h1>
