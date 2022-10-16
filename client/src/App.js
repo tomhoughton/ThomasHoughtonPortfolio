@@ -9,6 +9,7 @@ import HomeSlide from './components/HomeSlide';
 import ProjectsSlide from './components/ProjectsSlide';
 import ViewProject from './components/ViewProject';
 import Login from './components/Login';
+import Dashboard from './components/Dashboard';
 
 function Main() {
   return (
@@ -32,6 +33,7 @@ function App() {
       <Route path='/' element={<Main />} />
       <Route path='/view/:id' element={<ViewProject />} />
       <Route path='/thomaslogin' element={<Login/>}/>
+      <Route path='/dashboard' element={<Dashboard />} />
     </Routes>
   );
 }
