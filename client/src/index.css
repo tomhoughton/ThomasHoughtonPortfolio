@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @layer components {
+
     .page-label {
         @apply transition-all duration-500;
     }

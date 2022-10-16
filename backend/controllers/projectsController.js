@@ -42,13 +42,34 @@ const getProjects = asyncHandler( async (req, res) => {
     res.status(200).json({ projectsReturn });
 });
 
+// @desc Get Project
+// @route GET /api/project
+const getProject = asyncHandler( async (req, res) => {
+
+    // Find a project:
+    let id = req.params.id;    
+    const project = await Project.findById(id);
+
+    // Get the articles belonging to a project:
+    let articles = await Article.find({project: { $in: id}});
+
+    console.log(articles);
+
+    var projectRtn = {
+        project: project, 
+        articles: articles
+    }
+
+    res.status(200).json({projectRtn})
+})
+
 // @desc Post Projects
 // @route GET /api/projects
 // PRIVATE !!!!
 const postProject = asyncHandler( async (req, res) => {
 
     // Check to see if the request has what we need:
-    if (!req.body.name || !req.body.gitHubLink || !req.body.logo || !req.body.description) {
+    if (!req.body.name || !req.body.projectLink || !req.body.logo || !req.body.description) {
         res.status(400);
         throw new Error('Please include the required fields');
     } 
@@ -56,7 +77,7 @@ const postProject = asyncHandler( async (req, res) => {
     // Create a new Project:
     const project = await Project.create({
         name: req.body.name,
-        gitHubLink: req.body.gitHubLink,
+        projectLink: req.body.projectLink,
         logo: req.body.logo,
         images: req.body.images,
         description: req.body.description
@@ -69,5 +90,6 @@ const postProject = asyncHandler( async (req, res) => {
 
 module.exports = {
     getProjects,
+    getProject,
     postProject
 }
