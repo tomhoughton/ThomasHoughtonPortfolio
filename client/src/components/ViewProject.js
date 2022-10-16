@@ -30,13 +30,13 @@ const ViewProject = (props) => {
             return <Loader className=""/>
         } else {
             return (
-                <div className="h-screen flex flex-col space-y-20 bg-backgroundAlt text-white">
+                <div className=" md:h-screen flex flex-col space-y-20 bg-backgroundAlt text-white">
                     <Decoration />
                     <div className='flex flex-row m-auto mt-20 mb-10 '>
                         <Git className='flex w-20 h-20 mt-auto mb-auto mr-5' fill='#2cb67d'/>
                         <h1 className="text-5xl md:text-6xl mt-auto mb-auto">{data.project.name}</h1>
                     </div>
-                    <div className="flex flex-col md:hidden">
+                    <div className="flex flex-col md:hidden p-3">
                         
                         <div className="card container m-auto bg-background rounded-xl p-3">
                             <h1 className="text-3xl m-4 text-center">Description</h1>
