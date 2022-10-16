@@ -8,7 +8,7 @@ const Card = ({title, background, dispView, data}) => {
     return (
         <div>
             <Link to={`/view/${data._id}`}>
-                <div className='flex flex-col md:hidden space-x-2 space-y-2'>
+                <div className='flex flex-col md:hidden space-x-1 space-y-1 m-2'>
                     <div className={`card flex m-auto ${background} rounded-md w-[60px] h-[60px]`}>
                         <Git className='flex m-auto w-[40px] h-[40px]' fill='#2cb67d'/>    
                     </div>
