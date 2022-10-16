@@ -25,7 +25,6 @@ const ViewProject = (props) => {
         });
     }, [])
 
-
     function LoadElements() {
         if (spinner) {
             return <Loader className=""/>
@@ -37,7 +36,24 @@ const ViewProject = (props) => {
                         <Git className='flex w-20 h-20 mt-auto mb-auto mr-5' fill='#2cb67d'/>
                         <h1 className="text-5xl md:text-6xl mt-auto mb-auto">{data.project.name}</h1>
                     </div>
-                    <div className="flex flex-col md:flex-row mt-10 mb-0 items-start">
+                    <div className="flex flex-col md:hidden">
+                        
+                        <div className="card container m-auto bg-background rounded-xl p-3">
+                            <h1 className="text-3xl m-4 text-center">Description</h1>
+                            <p className="text-center m-5">{data.project.description}</p>
+                            <LinkButton className="m-5" type={'git'} link={data.project.projectLink}/>
+                        </div>
+
+                        <div className="card container m-auto mt-4 bg-background rounded-xl p-3">
+                            <h1 className="text-3xl m-4 text-center">Articles</h1>
+                            {
+                                data.articles.map((x) => {
+                                    return <Article title={x.title} link={x.mediumLink} />
+                                })
+                            }
+                        </div>
+                    </div>
+                    <div className="md:flex md:flex-row mt-10 mb-0 hidden">
                         <div className="card container m-5 ml-[200px] bg-background rounded-xl p-4">
                             <h1 className="text-3xl m-4 text-center">Description</h1>
                             <p className="text-center m-5">{data.project.description}</p>

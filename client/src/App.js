@@ -31,7 +31,7 @@ function App() {
     <Routes>
       <Route path='/' element={<Main />} />
       <Route path='/view/:id' element={<ViewProject />} />
-      <Route path='thomaslogin' element={<Login/>}/>
+      <Route path='/thomaslogin' element={<Login/>}/>
     </Routes>
   );
 }

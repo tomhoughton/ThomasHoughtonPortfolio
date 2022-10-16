@@ -6,15 +6,14 @@ const LinkButton = ({type, name, labelHidden, link}) => {
     
     const LinkIcon = () => {
         if (type === 'git') {
-            return <Git className='flex lg:w-10 lg:h-10 sm:w-7 sm:h-7  m-auto' fill='#ffffff'/>
+            return <Git className='flex lg:w-10 lg:h-10 w-7 h-7  m-auto' fill='#ffffff'/>
         } else if (type === 'linkedin') {
-            return <LinkedIn className='flex lg:w-10 lg:h-10 sm:w-7 sm:h-7 m-auto' fill='#ffffff'/>
+            return <LinkedIn className='flex lg:w-10 lg:h-10 w-7 h-7 m-auto' fill='#ffffff'/>
         } else if (type === 'medium') {
-            return <Medium className='flex lg:w-10 lg:h-10 sm:w-7 sm:h-7  m-auto'/>
+            return <Medium className='flex lg:w-10 lg:h-10 w-7 h-7  m-auto'/>
         }
         return (<h1>Hello</h1>)
     }
-    
     
     return (
         <a href={link}>
@@ -23,7 +22,6 @@ const LinkButton = ({type, name, labelHidden, link}) => {
                     {
                         LinkIcon()
                     }
-                    
                 </div>
                 <p className='m-auto text-xs md:text-sm text-center'>{name}</p>
             </div>
@@ -32,3 +30,4 @@ const LinkButton = ({type, name, labelHidden, link}) => {
 }
 
 export default LinkButton;
+ 
